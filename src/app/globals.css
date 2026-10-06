@@ -1,0 +1,1128 @@
+@import "tailwindcss";
+
+/* Brand mockups exported from the design tool contain bundled React; never scan them for classes. */
+@source not "../../logo";
+
+@theme {
+  --color-charcoal: #1a1b20;
+  --color-charcoal-soft: #26272d;
+  --color-charcoal-line: #34353c;
+  --color-paper: #f5f2ea;
+  --color-paper-deep: #e9e5da;
+  --color-paper-line: #d9d4c6;
+  --color-banana: #ffc83d;
+  --color-banana-soft: #ffe29a;
+  /* Small accent text: 5.5:1 on paper, 4.9:1 on paper-deep. Never on darker tints or with opacity. */
+  --color-banana-ink: #7a5d00;
+  /* Muted body text: 6.2:1 on paper. */
+  --color-stone: #5c5a55;
+  /* Muted text on charcoal: 8.5:1. */
+  --color-mist: #b9b6ae;
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Noto Sans Bengali", sans-serif;
+  --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains), "Courier New", monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Spring with a gentle overshoot, usable from CSS without any JavaScript. */
+  --ease-spring: linear(
+    0,
+    0.009,
+    0.035 2.1%,
+    0.141,
+    0.281 6.7%,
+    0.723 12.9%,
+    0.938 16.7%,
+    1.017,
+    1.077,
+    1.121,
+    1.149 24.3%,
+    1.159,
+    1.163,
+    1.161,
+    1.154 29.9%,
+    1.129 32.8%,
+    1.051 39.6%,
+    1.017 43.1%,
+    0.991,
+    0.977 51%,
+    0.974 53.8%,
+    0.975 57.1%,
+    0.997 69.8%,
+    1.003 76.9%,
+    1.004 83.8%,
+    1
+  );
+
+  --animate-marquee: marquee 38s linear infinite;
+}
+
+/* ---------- Typography variables (overridden for Bangla later) ---------- */
+:root {
+  --tracking-display: -0.045em;
+  --leading-display: 0.92;
+  --tracking-heading: -0.035em;
+  --leading-heading: 1;
+  --tracking-label: 0.18em;
+  --header-h: 4.25rem;
+  color-scheme: light;
+}
+
+/* Bengali vowel signs and conjuncts need room: no negative tracking, taller lines. */
+:lang(bn) {
+  --tracking-display: 0;
+  --leading-display: 1.25;
+  --tracking-heading: 0;
+  --leading-heading: 1.3;
+  --tracking-label: 0.02em;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-banana);
+    color: var(--color-charcoal);
+  }
+
+  /* Two-tone focus ring: banana inner ring, charcoal outer ring. Visible on every background. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-charcoal);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--color-banana);
+  }
+
+  .on-dark :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline-color: var(--color-paper);
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+}
+
+/* ---------- Type styles ---------- */
+@layer components {
+  h1,
+  h2,
+  .text-display,
+  .text-h2,
+  .text-h3 {
+    font-family: var(--font-display);
+  }
+
+  .text-display {
+    font-weight: 800;
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-display);
+    font-size: clamp(2.6rem, 10.5vw, 7.25rem);
+    text-wrap: balance;
+  }
+
+  .text-h2 {
+    font-weight: 800;
+    letter-spacing: var(--tracking-heading);
+    line-height: var(--leading-heading);
+    font-size: clamp(2.1rem, 6.4vw, 4.5rem);
+    text-wrap: balance;
+  }
+
+  .text-h3 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  }
+
+  .text-lead {
+    font-size: clamp(1.075rem, 1.9vw, 1.3rem);
+    line-height: 1.55;
+    text-wrap: pretty;
+  }
+
+  .text-label {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .on-dark {
+    background: var(--color-charcoal);
+    color: var(--color-paper);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    --btn-bg: var(--color-banana);
+    --btn-fg: var(--color-charcoal);
+    --btn-fill: var(--color-charcoal);
+    --btn-fill-fg: var(--color-paper);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3.25rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-decoration: none;
+    transition:
+      transform 0.25s var(--ease-out-expo),
+      color 0.3s var(--ease-out-expo);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--btn-fill);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .btn-arrow {
+    transition: transform 0.3s var(--ease-out-expo);
+  }
+
+  .btn-dark {
+    --btn-bg: var(--color-charcoal);
+    --btn-fg: var(--color-paper);
+    --btn-fill: var(--color-banana);
+    --btn-fill-fg: var(--color-charcoal);
+  }
+
+  .btn-ghost {
+    --btn-bg: transparent;
+    --btn-fg: currentColor;
+    --btn-fill: var(--color-charcoal);
+    --btn-fill-fg: var(--color-paper);
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+
+  .on-dark .btn-primary,
+  .btn-primary.on-dark-fill {
+    --btn-fill: var(--color-paper);
+    --btn-fill-fg: var(--color-charcoal);
+  }
+
+  .on-dark .btn-ghost {
+    --btn-fill: var(--color-paper);
+    --btn-fill-fg: var(--color-charcoal);
+  }
+
+  .btn-sm {
+    min-height: 2.75rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.95rem;
+  }
+
+  @media (hover: hover) {
+    .btn:hover {
+      color: var(--btn-fill-fg);
+    }
+
+    .btn:hover::before {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+  }
+
+  /* ---------- Links ---------- */
+  .link-draw {
+    text-decoration: none;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
+    transition: background-size 0.35s var(--ease-out-expo);
+  }
+
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 2px;
+  }
+
+  /* Nav link with a sliding banana bar. aria-current keeps it shown on the active page. */
+  .nav-link {
+    position: relative;
+    padding-block: 0.5rem;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.15rem;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--color-banana);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.4s var(--ease-out-expo);
+  }
+
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+
+  /* ---------- Header hide on scroll ---------- */
+  .site-header {
+    transition:
+      transform 0.45s var(--ease-out-expo),
+      background-color 0.3s,
+      box-shadow 0.3s;
+  }
+
+  html[data-scrolled] .site-header {
+    background-color: color-mix(in srgb, var(--color-paper) 94%, transparent);
+    box-shadow: 0 1px 0 var(--color-paper-line);
+  }
+
+  html[data-scroll-dir="down"][data-scrolled] .site-header:not(:focus-within) {
+    transform: translateY(-110%);
+  }
+
+  /* ---------- Mobile menu (<dialog>) ---------- */
+  .menu-dialog {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    padding: 0;
+    border: 0;
+    background: var(--color-charcoal);
+    color: var(--color-paper);
+    opacity: 0;
+    transform: translateY(-2%);
+    transition:
+      opacity 0.3s var(--ease-out-expo),
+      transform 0.45s var(--ease-out-expo),
+      overlay 0.45s allow-discrete,
+      display 0.45s allow-discrete;
+  }
+
+  .menu-dialog[open] {
+    opacity: 1;
+    transform: none;
+  }
+
+  @starting-style {
+    .menu-dialog[open] {
+      opacity: 0;
+      transform: translateY(-2%);
+    }
+  }
+
+  .menu-dialog::backdrop {
+    background: transparent;
+  }
+
+  .menu-dialog .menu-item {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.4s var(--ease-out-expo),
+      transform 0.6s var(--ease-out-expo);
+    transition-delay: calc(var(--i, 0) * 45ms + 80ms);
+  }
+
+  @starting-style {
+    .menu-dialog[open] .menu-item {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+  }
+
+  /* ---------- Marquee ---------- */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: var(--animate-marquee);
+  }
+
+  .marquee[data-paused="true"] .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @media (hover: hover) {
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+  }
+
+  /* ---------- Underline bar from the logo ---------- */
+  .underline-bar {
+    display: block;
+    height: 0.6rem;
+    border-radius: 999px;
+    background: var(--color-banana);
+    transform-origin: left center;
+    animation: bar-draw 0.9s var(--ease-out-expo) 0.35s both;
+  }
+}
+
+/* ---------- Ape mascot ---------- */
+@layer components {
+  .ape-part {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .ape-enter {
+    animation: ape-enter 1.25s var(--ease-spring) 0.2s both;
+  }
+
+  .ape-duck {
+    transition: transform 0.55s var(--ease-spring);
+  }
+
+  html[data-scroll-dir="down"][data-scrolled] .ape-duck {
+    transform: translateY(60px);
+  }
+
+  .ape-pop {
+    transition: transform 0.6s var(--ease-spring);
+  }
+
+  .is-grinning .ape-pop {
+    transform: translateY(-34px);
+  }
+
+  .ape-brow {
+    transition: transform 0.35s var(--ease-spring);
+  }
+
+  [data-ape-host]:has([data-ape-excite]:hover, [data-ape-excite]:focus-visible) .ape-brow,
+  .is-grinning .ape-brow {
+    transform: translateY(-8px);
+  }
+
+  /* Blinks are triggered by ApeBlinker (a class toggle), not an infinite animation. */
+  .ape-blink {
+    transition: transform 0.07s ease-in;
+  }
+
+  .ape-blink.is-blinking {
+    transform: scaleY(0.08);
+  }
+
+  .is-grinning .ape-blink {
+    transform: scaleY(0.4);
+    transition: transform 0.2s;
+  }
+
+  .ape-mouth,
+  .ape-grin {
+    transition: opacity 0.2s;
+  }
+
+  .ape-grin {
+    opacity: 0;
+  }
+
+  .is-grinning .ape-mouth {
+    opacity: 0;
+  }
+
+  .is-grinning .ape-grin {
+    opacity: 1;
+  }
+}
+
+/* ---------- Scroll-driven reveals (zero JavaScript) ----------
+   Content is visible by default. Animations only apply when the browser supports
+   view timelines and the visitor hasn't asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    [data-reveal] {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 5%) entry calc(55% + var(--i, 0) * 5%);
+    }
+
+    [data-reveal="fade"] {
+      animation-name: reveal-fade;
+    }
+
+    [data-reveal="scale"] {
+      animation-name: reveal-scale;
+    }
+
+    [data-reveal="left"] {
+      animation-name: reveal-left;
+    }
+
+    /* Parallax: elements drift as their section scrolls through the viewport. */
+    [data-parallax] {
+      animation: parallax linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+
+    [data-parallax="fast"] {
+      animation-name: parallax-fast;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .underline-bar,
+  .ape-enter {
+    animation: none;
+  }
+
+  .ape-duck,
+  .ape-pop,
+  .ape-brow,
+  .site-header,
+  .menu-dialog,
+  .menu-dialog .menu-item,
+  .btn,
+  .btn::before {
+    transition: none;
+  }
+
+  html[data-scroll-dir="down"][data-scrolled] .ape-duck {
+    transform: none;
+  }
+
+  /* The mascot still blinks (ApeBlinker slows it down); just no transition. */
+  .ape-blink {
+    transition: none;
+  }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes parallax {
+  from {
+    transform: translateY(24px);
+  }
+  to {
+    transform: translateY(-24px);
+  }
+}
+
+@keyframes parallax-fast {
+  from {
+    transform: translateY(72px);
+  }
+  to {
+    transform: translateY(-72px);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bar-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes ape-enter {
+  from {
+    transform: translateY(150px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================================
+   Home page and shared section styles
+   ===================================================================== */
+@layer components {
+  /* Faint dot grid behind the hero, fading out towards the bottom. */
+  .bg-dots {
+    background-image: radial-gradient(circle at 1px 1px, rgb(26 27 32 / 0.13) 1px, transparent 0);
+    background-size: 22px 22px;
+    mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
+  }
+
+  /* Small floating chips around the hero mascot. */
+  .float-chip {
+    animation: float-y 6s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+
+  /* Below-the-fold sections: the browser skips their layout and paint until they near the viewport.
+     Measured on the home page at 4x CPU throttling: initial layout drops from ~1000ms to ~400ms. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto var(--cis, 1000px);
+  }
+
+  /* ---------- Cards ---------- */
+  .lift-card {
+    transition:
+      transform 0.5s var(--ease-out-expo),
+      box-shadow 0.5s var(--ease-out-expo);
+  }
+
+  @media (hover: hover) {
+    .lift-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px -24px rgb(26 27 32 / 0.35);
+    }
+  }
+
+  /* Stretched link: the whole card is clickable through one accessible link. */
+  .stretched-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  /* ---------- Offering icons act on card hover ---------- */
+  .icon-part {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.6s var(--ease-spring), opacity 0.3s;
+  }
+
+  @media (hover: hover) {
+    .offer-card:hover .icon-bag {
+      animation: bag-bounce 0.8s var(--ease-out-expo);
+    }
+    .offer-card:hover .icon-bag-handle {
+      transform: rotate(-8deg);
+    }
+    .offer-card:hover .icon-lens {
+      transform: rotate(120deg) scale(1.08);
+    }
+    .offer-card:hover .icon-flash {
+      animation: camera-flash 0.7s ease-out;
+    }
+    .offer-card:hover .icon-ring-left {
+      transform: translateX(5px) rotate(-8deg);
+    }
+    .offer-card:hover .icon-ring-right {
+      transform: translateX(-5px) rotate(8deg);
+    }
+    .offer-card:hover .icon-sparkle {
+      opacity: 1;
+      transform: scale(1) rotate(45deg);
+    }
+    .offer-card:hover .icon-code {
+      transform: scaleX(1.18);
+    }
+    .offer-card:hover .icon-slash {
+      transform: rotate(18deg);
+    }
+    .offer-card:hover .icon-windows {
+      animation: windows-blink 0.9s steps(2) 2;
+    }
+    .offer-card:hover .icon-cap {
+      transform: translateY(-6px) rotate(-6deg);
+    }
+    .offer-card:hover .icon-tassel {
+      transform: rotate(14deg);
+    }
+  }
+
+  .icon-tassel {
+    transform-origin: top center;
+  }
+
+  .icon-flash,
+  .icon-sparkle {
+    opacity: 0;
+  }
+
+  .icon-sparkle {
+    transform: scale(0.3);
+  }
+
+  /* ---------- Device mockups ---------- */
+  .screen {
+    container-type: size;
+  }
+
+  /* Full-page screenshot that scrolls inside the laptop on hover (desktop only). */
+  .scroll-shot {
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 50% 0;
+    transition:
+      opacity 0.35s ease,
+      background-position 0.9s var(--ease-out-expo);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    /* The full screenshot is only requested the first time a card is hovered or focused. */
+    .project-card:hover .scroll-shot,
+    .project-card:focus-within .scroll-shot {
+      background-image: var(--full);
+      opacity: 1;
+      background-position: 50% 100%;
+      transition:
+        opacity 0.35s ease,
+        background-position var(--scroll-duration, 7s) cubic-bezier(0.45, 0, 0.55, 1) 0.25s;
+    }
+
+    .project-card .phone-peek {
+      transition: transform 0.7s var(--ease-spring);
+    }
+
+    .project-card:hover .phone-peek {
+      transform: translate(-8%, -10%) rotate(-3deg);
+    }
+  }
+
+  /* Tilt toward the cursor; PointerEffects sets --rx/--ry on desktop. */
+  [data-tilt] {
+    transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.6s var(--ease-out-expo);
+  }
+
+  .cursor-pill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(var(--mx, 50%), var(--my, 50%)) translate(-50%, -50%) scale(0.6);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s var(--ease-out-expo);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .project-card:hover .cursor-pill {
+      opacity: 1;
+      transform: translate(var(--mx, 50%), var(--my, 50%)) translate(-50%, -50%) scale(1);
+    }
+  }
+
+  /* ---------- Process timeline ---------- */
+  .process-fill {
+    transform-origin: top center;
+  }
+
+  .climber-track {
+    position: absolute;
+    inset-block: 0;
+  }
+
+  .climber-swing {
+    animation: swing 2.4s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  /* ---------- Edge peeking ape (CTA band) ---------- */
+  .ape-peek-edge {
+    transform: translateY(32%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .process-fill {
+      animation: grow-y linear both;
+      animation-timeline: --process;
+      animation-range: entry 45% exit 55%;
+    }
+
+    .process-list {
+      view-timeline-name: --process;
+    }
+
+    .climber {
+      animation: climb linear both;
+      animation-timeline: --process;
+      animation-range: entry 45% exit 55%;
+    }
+
+    .ape-peek-edge {
+      animation: peek-up linear both;
+      animation-timeline: view();
+      animation-range: entry 15% entry 100%;
+    }
+
+    /* The featured laptop settles as it scrolls in. */
+    [data-settle] {
+      animation: settle linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 45%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-chip,
+  .climber-swing {
+    animation: none;
+  }
+
+  .lift-card,
+  .scroll-shot,
+  [data-tilt],
+  .cursor-pill,
+  .icon-part {
+    transition: none;
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rot, 0deg));
+  }
+}
+
+@keyframes bag-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-9px);
+  }
+  65% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes camera-flash {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes windows-blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes climb {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes peek-up {
+  from {
+    transform: translateY(85%);
+  }
+  to {
+    transform: translateY(32%);
+  }
+}
+
+@keyframes settle {
+  from {
+    transform: translateY(40px) scale(0.96) rotate(-1.5deg);
+  }
+  to {
+    transform: none;
+  }
+}
+
+
+/* ---------- Contact dialog ---------- */
+@layer components {
+  .contact-dialog {
+    width: min(40rem, calc(100% - 1.5rem));
+    max-height: calc(100dvh - 1.5rem);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 1.75rem;
+    background: var(--color-paper);
+    color: var(--color-charcoal);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 40px 80px -30px rgb(26 27 32 / 0.6);
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+    transition:
+      opacity 0.25s var(--ease-out-expo),
+      transform 0.45s var(--ease-out-expo),
+      overlay 0.45s allow-discrete,
+      display 0.45s allow-discrete;
+  }
+
+  .contact-dialog[open] {
+    opacity: 1;
+    transform: none;
+  }
+
+  @starting-style {
+    .contact-dialog[open] {
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+    }
+  }
+
+  .contact-dialog::backdrop {
+    background: rgb(26 27 32 / 0.55);
+    opacity: 0;
+    transition:
+      opacity 0.3s,
+      overlay 0.3s allow-discrete,
+      display 0.3s allow-discrete;
+  }
+
+  .contact-dialog[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .contact-dialog[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  /* Phones: a sheet that slides up from the bottom. */
+  @media (max-width: 639px) {
+    .contact-dialog {
+      width: 100%;
+      max-width: none;
+      max-height: 92dvh;
+      margin: auto 0 0;
+      border-radius: 1.75rem 1.75rem 0 0;
+      transform: translateY(40px);
+    }
+
+    @starting-style {
+      .contact-dialog[open] {
+        transform: translateY(40px);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-dialog,
+  .contact-dialog::backdrop {
+    transition: none;
+  }
+}
+
+/* Body scroll lock while a modal dialog is open. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* ---------- Work grid filtering (data-filter set by WorkFilter) ---------- */
+[data-filter="ecommerce"] [data-cats]:not([data-cats~="ecommerce"]),
+[data-filter="webapp"] [data-cats]:not([data-cats~="webapp"]),
+[data-filter="business"] [data-cats]:not([data-cats~="business"]),
+[data-filter="portfolio"] [data-cats]:not([data-cats~="portfolio"]),
+[data-filter="wedding"] [data-cats]:not([data-cats~="wedding"]) {
+  display: none;
+}
+
+::view-transition-group(*) {
+  animation-duration: 0.45s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- FAQ accordion (native <details>) ---------- */
+@layer components {
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    transition: transform 0.35s var(--ease-out-expo);
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-item::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size 0.4s var(--ease-out-expo),
+      content-visibility 0.4s allow-discrete;
+  }
+
+  .faq-item[open]::details-content {
+    block-size: auto;
+  }
+
+  /* About page: the ape assembles itself as it scrolls in. */
+  .assemble > * {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}
+
+/* Lets details animate to height:auto where supported. */
+:root {
+  interpolate-size: allow-keywords;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .assemble > * {
+      animation: assemble linear both;
+      animation-timeline: view();
+      animation-range: entry calc(5% + var(--d, 0) * 7%) cover calc(35% + var(--d, 0) * 5%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item::details-content,
+  .faq-icon {
+    transition: none;
+  }
+}
+
+@keyframes assemble {
+  from {
+    opacity: var(--o, 0);
+    transform: translate(var(--x, 0), var(--y, 40px)) rotate(var(--r, 0deg)) scale(var(--s, 1));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Room for the sticky mobile contact bar on service pages, so it never covers the footer. */
+@media (max-width: 767px) {
+  body:has(.sticky-contact-bar) {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "homeTitle": "Big Ape Web · Web design and development agency",
+    "homeDescription": "Big Ape Web is a web design and development agency. We build ecommerce stores, business websites, web apps, WordPress and LMS platforms, portfolios and wedding websites that help you grow online.",
+    "titleTemplate": "%s · Big Ape Web"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "chatOnWhatsApp": "Chat on WhatsApp",
+    "whatsapp": "WhatsApp",
+    "messageOnMessenger": "Message on Messenger",
+    "letsTalk": "Let's talk",
+    "startProject": "Start a project",
+    "seeOurWork": "See our work",
+    "seeAllWork": "See all work",
+    "allServices": "All services",
+    "viewCase": "View case",
+    "visitSite": "Visit live site",
+    "learnMore": "Learn more",
+    "getAQuote": "Get a quote",
+    "contact": "Contact",
+    "pauseAnimation": "Pause animation",
+    "playAnimation": "Play animation",
+    "opensInNewTab": "(opens in a new tab)",
+    "backHome": "Back to home",
+    "home": "Home"
+  },
+  "status": {
+    "live": "Live",
+    "concept": "Concept",
+    "coming-soon": "Coming soon",
+    "conceptNote": "Concept design, not yet a live client site."
+  },
+  "kind": {
+    "client": "Client project",
+    "product": "Our product",
+    "personal": "Personal site"
+  },
+  "categories": {
+    "all": "All",
+    "ecommerce": "Ecommerce",
+    "webapp": "Web apps",
+    "business": "Business",
+    "portfolio": "Portfolio",
+    "wedding": "Wedding"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "letsTalk": "Let's talk",
+    "menuTitle": "Menu"
+  },
+  "hero": {
+    "label": "Web design & development agency",
+    "titleLine1": "Websites that make",
+    "titleLine2": "your business",
+    "titleAccent": "look big.",
+    "subtitle": "Big Ape Web designs and builds online stores, business websites and web apps that load fast on any phone and help your business grow.",
+    "mascotLabel": "Say hi to the Big Ape mascot",
+    "whatsappMessage": "Hi Big Ape Web! We'd like to talk about a website."
+  },
+  "marquee": {
+    "items": [
+      "Ecommerce",
+      "Payment gateways",
+      "Business websites",
+      "Web apps",
+      "WordPress",
+      "LMS",
+      "Booking systems",
+      "Portfolios",
+      "Wedding websites"
+    ]
+  },
+  "clients": {
+    "label": "Our clients",
+    "title": "Trusted by growing brands",
+    "visit": "Visit {name}"
+  },
+  "offerings": {
+    "label": "What we do",
+    "title": "We bring your ideas to life online.",
+    "subtitle": "From your first online store to a full web app, we design, build and launch websites that help your business grow."
+  },
+  "featured": {
+    "label": "Our work",
+    "title": "Proof, not promises.",
+    "subtitle": "Live client stores, our own products and more. Hover or tap to take a look."
+  },
+  "process": {
+    "label": "How we work",
+    "title": "From idea to launch, and beyond.",
+    "steps": [
+      {
+        "title": "Talk",
+        "body": "Tell us about your business on WhatsApp, a call or our form. We'll recommend what you actually need, and what you don't."
+      },
+      {
+        "title": "Design",
+        "body": "You see how your site will look before we write any code, and we refine it together."
+      },
+      {
+        "title": "Build",
+        "body": "We build it mobile-first and test it on real phones. You get preview links along the way."
+      },
+      {
+        "title": "Launch",
+        "body": "Your site goes live on your own domain, and we show your team how to run it."
+      },
+      {
+        "title": "Grow",
+        "body": "After launch, we help you improve, add features and reach more customers as your business grows."
+      }
+    ]
+  },
+  "sectionCta": {
+    "title": "Have a project in mind?",
+    "body": "Tell us about it on WhatsApp or through our form, whichever is easier."
+  },
+  "cta": {
+    "title": "Let's build something big.",
+    "subtitle": "Tell us about your idea on WhatsApp, Messenger or through our form. No jargon, no pressure."
+  },
+  "contactForm": {
+    "dialogTitle": "Let's talk",
+    "dialogSubtitle": "Tell us a little about your project and we'll get back to you.",
+    "close": "Close",
+    "name": "Your name",
+    "phone": "WhatsApp or phone number",
+    "email": "Email",
+    "optional": "optional",
+    "service": "What do you need?",
+    "serviceOther": "Something else",
+    "budget": "Budget",
+    "message": "Tell us about your project",
+    "messagePlaceholder": "What are you selling or building? Any websites you like?",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "or": "or",
+    "sendWhatsApp": "Send on WhatsApp instead",
+    "successTitle": "Thanks! We got your message.",
+    "successBody": "We'll get back to you soon. Want a faster reply?",
+    "continueWhatsApp": "Continue on WhatsApp",
+    "errorRequired": "Please fill this in.",
+    "errorPhone": "Please enter a valid phone number.",
+    "errorEmail": "Please enter a valid email address.",
+    "errorMessage": "Please tell us a bit more (at least 10 characters).",
+    "errorServer": "Sorry, your message couldn't be sent. Please reach us on WhatsApp instead.",
+    "whatsappIntro": "Hi Big Ape Web! I'd like to talk about a project."
+  },
+  "workPage": {
+    "metaTitle": "Our work",
+    "metaDescription": "Ecommerce stores, web apps, business websites, portfolios and wedding websites designed and built by Big Ape Web.",
+    "label": "Our work",
+    "title": "Stores, apps and sites we've built.",
+    "subtitle": "Live client stores, our own products and concept designs. Filter by what you need.",
+    "filterLabel": "Filter projects",
+    "showing": "Showing {count, plural, one {# project} other {# projects}}"
+  },
+  "caseStudy": {
+    "allWork": "All work",
+    "overview": "Overview",
+    "challenge": "The challenge",
+    "solution": "What we built",
+    "features": "Key features",
+    "stack": "Built with",
+    "year": "Year",
+    "type": "Type",
+    "services": "Services",
+    "liveSite": "Live site",
+    "results": "Results",
+    "testimonial": "In the client's words",
+    "screens": "Screens",
+    "desktop": "Desktop",
+    "mobile": "Mobile",
+    "next": "Next project",
+    "similar": "Start a similar project",
+    "comingSoonNote": "Launching soon. Get in touch for early access."
+  },
+  "servicesPage": {
+    "metaTitle": "Services",
+    "metaDescription": "Ecommerce websites, custom web apps, business websites, WordPress and LMS, portfolio and wedding websites by Big Ape Web.",
+    "label": "Services",
+    "title": "Everything you need to grow online.",
+    "subtitle": "Pick a service, or tell us your idea and we'll recommend the right one.",
+    "examples": "{count, plural, =0 {Ask us for examples} one {# example} other {# examples}}"
+  },
+  "servicePage": {
+    "whoFor": "Who it's for",
+    "whatYouGet": "What you get",
+    "examples": "Work we've done",
+    "pricing": "Pricing",
+    "pricingTitle": "Simple packages. Clear prices.",
+    "pricingNote": "Prices in Bangladeshi Taka. Every project is different, so message us for an exact quote.",
+    "from": "from",
+    "popular": "Most popular",
+    "choose": "Choose {tier}",
+    "faq": "Questions",
+    "faqTitle": "Good questions.",
+    "otherServices": "Other services",
+    "process": "How it works"
+  },
+  "aboutPage": {
+    "metaTitle": "About us",
+    "metaDescription": "Big Ape Web is a web design and development agency building websites, online stores and web apps for businesses in Bangladesh and beyond.",
+    "label": "About us",
+    "title": "We're Big Ape Web.",
+    "subtitle": "A web design and development agency that builds websites, online stores and web apps for businesses in Bangladesh and beyond.",
+    "storyLabel": "Our story",
+    "storyTitle": "Why \"Big Ape\"?",
+    "story": [
+      "Big Ape started as our founder's nickname, and it stuck. It's also a fair description of how we work: big on ambition, strong on the details, and friendly once you get to know us.",
+      "Our mascot peeks out of a browser window for a reason. Everything we make lives on the web, and we want it to stand out there.",
+      "We work with shops, brands, founders and couples who want more than a template: a website that looks premium, loads fast on any phone and actually brings in business."
+    ],
+    "valuesLabel": "What we believe",
+    "valuesTitle": "How we work",
+    "values": [
+      { "title": "Mobile first", "body": "Most of your customers are on their phones, so that's where we design first." },
+      { "title": "Built to sell", "body": "Every page has a job: to get a call, a message or an order." },
+      { "title": "Plain language", "body": "No jargon. You'll always know what we're doing and why." },
+      { "title": "In it for the long run", "body": "After launch, we help you improve and grow your site." }
+    ],
+    "toolsLabel": "Our toolkit",
+    "toolsTitle": "Tools we build with",
+    "toolsBody": "Modern, proven technology, chosen for speed and for how easy your site will be to run."
+  },
+  "contactPage": {
+    "metaTitle": "Contact",
+    "metaDescription": "Talk to Big Ape Web about your website, online store or web app. Message us on WhatsApp or Messenger, or send the form.",
+    "label": "Contact",
+    "title": "Let's talk about your project.",
+    "subtitle": "Send us a message, or reach us directly on WhatsApp or Messenger. Whichever is easier for you.",
+    "formTitle": "Send us a message",
+    "channelsTitle": "Or reach us directly",
+    "whatsappDesc": "The fastest way to reach us.",
+    "messengerDesc": "Message our Facebook page.",
+    "emailDesc": "For longer briefs and files.",
+    "nextTitle": "What happens next",
+    "next": [
+      "We read your message and reply on WhatsApp or email.",
+      "We talk through what you need and suggest the best approach.",
+      "You get a clear quote and timeline before any work starts."
+    ]
+  },
+  "privacyPage": {
+    "metaTitle": "Privacy policy",
+    "metaDescription": "How Big Ape Web handles the information you share through this website."
+  },
+  "footer": {
+    "tagline": "A web design and development agency building stores, apps and websites for businesses in Bangladesh and beyond.",
+    "explore": "Explore",
+    "servicesTitle": "Services",
+    "getInTouch": "Get in touch",
+    "madeIn": "Made in Dhaka, fuelled by bananas.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy"
+  },
+  "notFound": {
+    "title": "This page swung off somewhere.",
+    "body": "Our ape looked everywhere and couldn't find it. Let's get you back on the right branch."
+  }
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Big Ape Web — Browser peek</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A1B20}a:hover{color:#000}
+</style>
+</helmet>
+<div style="width: 1200px; height: 760px; display: flex; flex-direction: column; font-family: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif; color: #1A1B20; background: #F5F2EA">
+<div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; gap: 44px">
+<svg viewBox="0 0 200 180" width="240" height="216" aria-hidden="true">
+<rect x="8" y="8" width="184" height="164" rx="26" fill="#1A1B20"></rect>
+<circle cx="34" cy="31" r="6" fill="{{accent}}"></circle>
+<circle cx="52" cy="31" r="6" fill="#F5F2EA"></circle>
+<circle cx="70" cy="31" r="6" fill="#F5F2EA"></circle>
+<rect x="22" y="52" width="156" height="106" rx="14" fill="{{accent}}"></rect>
+<defs><clipPath id="peekMain"><rect x="22" y="52" width="156" height="106" rx="14"></rect></clipPath></defs>
+<g clip-path="url(#peekMain)">
+<g transform="translate(30 58) scale(0.7)">
+<path fill="#1A1B20" d="M100 16C142 16 168 44 171 84C186 89 193 104 187 118C183 128 173 132 166 130C160 167 134 188 100 188C66 188 40 167 34 130C27 132 17 128 13 118C7 104 14 89 29 84C32 44 58 16 100 16Z"></path>
+<path fill="#F5F2EA" d="M100 70C121 60 151 62 153 85C155 101 145 109 141 119C139 151 125 170 100 170C75 170 61 151 59 119C55 109 45 101 47 85C49 62 79 60 100 70Z"></path>
+<path fill="#1A1B20" d="M45 88C58 70 84 72 100 81C116 72 142 70 155 88L152 99C137 89 116 91 100 98C84 91 63 89 48 99Z"></path>
+<circle cx="80" cy="113" r="7" fill="#1A1B20"></circle>
+<circle cx="120" cy="113" r="7" fill="#1A1B20"></circle>
+<ellipse cx="91" cy="138" rx="6" ry="4.5" fill="#1A1B20"></ellipse>
+<ellipse cx="109" cy="138" rx="6" ry="4.5" fill="#1A1B20"></ellipse>
+</g>
+</g>
+</svg>
+<div style="display: flex; flex-direction: column; font-size: 112px; font-weight: 800; letter-spacing: -0.05em; line-height: 0.82">
+<div>big ape</div>
+<div style="display: flex; align-items: baseline; gap: 6px">
+<div style="font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; font-size: 72px; letter-spacing: -0.02em; color: #8A6A00">&lt;</div>
+<div>web</div>
+<div style="font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; font-size: 72px; letter-spacing: -0.02em; color: #8A6A00">/&gt;</div>
+</div>
+</div>
+</div>
+<div style="height: 250px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr))">
+<div style="background: #1A1B20; display: flex; align-items: center; justify-content: center; gap: 20px">
+<svg viewBox="0 0 200 180" width="104" height="94" aria-hidden="true">
+<rect x="8" y="8" width="184" height="164" rx="26" fill="#F5F2EA"></rect>
+<circle cx="34" cy="31" r="6" fill="#1A1B20"></circle>
+<circle cx="52" cy="31" r="6" fill="#1A1B20"></circle>
+<circle cx="70" cy="31" r="6" fill="#1A1B20"></circle>
+<rect x="22" y="52" width="156" height="106" rx="14" fill="{{accent}}"></rect>
+<defs><clipPath id="peekDark"><rect x="22" y="52" width="156" height="106" rx="14"></rect></clipPath></defs>
+<g clip-path="url(#peekDark)">
+<g transform="translate(30 58) scale(0.7)">
+<path fill="#1A1B20" d="M100 16C142 16 168 44 171 84C186 89 193 104 187 118C183 128 173 132 166 130C160 167 134 188 100 188C66 188 40 167 34 130C27 132 17 128 13 118C7 104 14 89 29 84C32 44 58 16 100 16Z"></path>
+<path fill="#F5F2EA" d="M100 70C121 60 151 62 153 85C155 101 145 109 141 119C139 151 125 170 100 170C75 170 61 151 59 119C55 109 45 101 47 85C49 62 79 60 100 70Z"></path>
+<path fill="#1A1B20" d="M45 88C58 70 84 72 100 81C116 72 142 70 155 88L152 99C137 89 116 91 100 98C84 91 63 89 48 99Z"></path>
+<circle cx="80" cy="113" r="7" fill="#1A1B20"></circle>
+<circle cx="120" cy="113" r="7" fill="#1A1B20"></circle>
+<ellipse cx="91" cy="138" rx="6" ry="4.5" fill="#1A1B20"></ellipse>
+<ellipse cx="109" cy="138" rx="6" ry="4.5" fill="#1A1B20"></ellipse>
+</g>
+</g>
+</svg>
+<div style="display: flex; flex-direction: column; font-size: 46px; font-weight: 800; letter-spacing: -0.05em; line-height: 0.85; color: #F5F2EA">
+<div>big ape</div>
+<div style="color: {{accent}}">web</div>
+</div>
+</div>
+<div style="background: #F5F2EA; display: flex; align-items: center; justify-content: center">
+<div style="width: 150px; height: 150px; border-radius: 36px; background: {{accent}}; display: flex; align-items: flex-end; justify-content: center; overflow: hidden">
+<svg viewBox="0 0 200 130" width="138" height="90" aria-hidden="true">
+<path fill="#1A1B20" d="M100 16C142 16 168 44 171 84C186 89 193 104 187 118C183 128 173 132 166 130C160 167 134 188 100 188C66 188 40 167 34 130C27 132 17 128 13 118C7 104 14 89 29 84C32 44 58 16 100 16Z"></path>
+<path fill="#F5F2EA" d="M100 70C121 60 151 62 153 85C155 101 145 109 141 119C139 151 125 170 100 170C75 170 61 151 59 119C55 109 45 101 47 85C49 62 79 60 100 70Z"></path>
+<path fill="#1A1B20" d="M45 88C58 70 84 72 100 81C116 72 142 70 155 88L152 99C137 89 116 91 100 98C84 91 63 89 48 99Z"></path>
+<circle cx="80" cy="113" r="7" fill="#1A1B20"></circle>
+<circle cx="120" cy="113" r="7" fill="#1A1B20"></circle>
+</svg>
+</div>
+</div>
+<div style="background: #FFFFFF; display: flex; align-items: center; justify-content: center; gap: 24px">
+<svg viewBox="0 0 200 180" width="64" height="58" aria-hidden="true">
+<rect x="8" y="8" width="184" height="164" rx="26" fill="#1A1B20"></rect>
+<rect x="22" y="52" width="156" height="106" rx="14" fill="#FFFFFF"></rect>
+<defs><clipPath id="peekFav1"><rect x="22" y="52" width="156" height="106" rx="14"></rect></clipPath></defs>
+<g clip-path="url(#peekFav1)"><g transform="translate(30 58) scale(0.7)">
+<path fill="#1A1B20" d="M100 16C142 16 168 44 171 84C186 89 193 104 187 118C183 128 173 132 166 130C160 167 134 188 100 188C66 188 40 167 34 130C27 132 17 128 13 118C7 104 14 89 29 84C32 44 58 16 100 16Z"></path>
+<path fill="#FFFFFF" d="M100 70C121 60 151 62 153 85C155 101 145 109 141 119C139 151 125 170 100 170C75 170 61 151 59 119C55 109 45 101 47 85C49 62 79 60 100 70Z"></path>
+<path fill="#1A1B20" d="M45 88C58 70 84 72 100 81C116 72 142 70 155 88L152 99C137 89 116 91 100 98C84 91 63 89 48 99Z"></path>
+<circle cx="80" cy="113" r="9" fill="#1A1B20"></circle>
+<circle cx="120" cy="113" r="9" fill="#1A1B20"></circle>
+</g></g>
+</svg>
+<svg viewBox="0 0 200 180" width="40" height="36" aria-hidden="true">
+<rect x="8" y="8" width="184" height="164" rx="26" fill="#1A1B20"></rect>
+<rect x="22" y="52" width="156" height="106" rx="14" fill="#FFFFFF"></rect>
+<defs><clipPath id="peekFav2"><rect x="22" y="52" width="156" height="106" rx="14"></rect></clipPath></defs>
+<g clip-path="url(#peekFav2)"><g transform="translate(30 58) scale(0.7)">
+<path fill="#1A1B20" d="M100 16C142 16 168 44 171 84C186 89 193 104 187 118C183 128 173 132 166 130C160 167 134 188 100 188C66 188 40 167 34 130C27 132 17 128 13 118C7 104 14 89 29 84C32 44 58 16 100 16Z"></path>
+<path fill="#FFFFFF" d="M100 70C121 60 151 62 153 85C155 101 145 109 141 119C139 151 125 170 100 170C75 170 61 151 59 119C55 109 45 101 47 85C49 62 79 60 100 70Z"></path>
+<path fill="#1A1B20" d="M45 88C58 70 84 72 100 81C116 72 142 70 155 88L152 99C137 89 116 91 100 98C84 91 63 89 48 99Z"></path>
+<circle cx="80" cy="113" r="11" fill="#1A1B20"></circle>
+<circle cx="120" cy="113" r="11" fill="#1A1B20"></circle>
+</g></g>
+</svg>
+<svg viewBox="0 0 200 180" width="24" height="22" aria-hidden="true">
+<rect x="8" y="8" width="184" height="164" rx="26" fill="#1A1B20"></rect>
+<rect x="22" y="52" width="156" height="106" rx="14" fill="#FFFFFF"></rect>
+<defs><clipPath id="peekFav3"><rect x="22" y="52" width="156" height="106" rx="14"></rect></clipPath></defs>
+<g clip-path="url(#peekFav3)"><g transform="translate(30 58) scale(0.7)">
+<path fill="#1A1B20" d="M100 16C142 16 168 44 171 84C186 89 193 104 187 118C183 128 173 132 166 130C160 167 134 188 100 188C66 188 40 167 34 130C27 132 17 128 13 118C7 104 14 89 29 84C32 44 58 16 100 16Z"></path>
+<path fill="#FFFFFF" d="M100 70C121 60 151 62 153 85C155 101 145 109 141 119C139 151 125 170 100 170C75 170 61 151 59 119C55 109 45 101 47 85C49 62 79 60 100 70Z"></path>
+</g></g>
+</svg>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FFC83D","options":["#FFC83D","#FF8A3D","#7BD66B","#5BC0FF"]},"$preview":{"width":1200,"height":760}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#FFC83D' };
+}
+}
+</script>
+</body>
+</html>
