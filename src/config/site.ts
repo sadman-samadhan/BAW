@@ -16,7 +16,7 @@ export const site = {
     whatsappNumber: "8801353630697",
     /** Facebook page username or numeric page ID, used for m.me links */
     messengerUsername: "61596124325828",
-    email: "hello@bigapeweb.com",
+    email: "bigapeweb@gmail.com",
   },
 
   socials: {
