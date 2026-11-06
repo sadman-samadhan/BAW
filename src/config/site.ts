@@ -13,14 +13,15 @@ export const site = {
 
   contact: {
     /** International format without + or spaces, e.g. 8801XXXXXXXXX */
-    whatsappNumber: "[WHATSAPP_NUMBER]",
-    /** Facebook page username used for m.me links */
-    messengerUsername: "[MESSENGER_USERNAME]",
+    whatsappNumber: "8801353630697",
+    /** Facebook page username or numeric page ID, used for m.me links */
+    messengerUsername: "61596124325828",
     email: "hello@bigapeweb.com",
   },
 
   socials: {
-    facebook: "[FACEBOOK_PAGE_URL]",
+    facebook: "https://www.facebook.com/profile.php?id=61596124325828",
+    instagram: "https://www.instagram.com/bigapeweb/",
     github: "https://github.com/sadman-samadhan",
   },
 

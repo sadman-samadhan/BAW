@@ -80,6 +80,26 @@ export async function SiteFooter() {
                   </a>
                 </li>
                 <li>
+                  <a
+                    className={`${linkClass} inline-flex items-center gap-2`}
+                    href={site.socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <BrandIcon name="facebook" size={16} /> Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={`${linkClass} inline-flex items-center gap-2`}
+                    href={site.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <BrandIcon name="instagram" size={16} /> Instagram
+                  </a>
+                </li>
+                <li>
                   <a className={linkClass} href={emailHref()} data-track="Contact" data-track-channel="email">
                     {site.contact.email}
                   </a>

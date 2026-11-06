@@ -21,6 +21,8 @@ export function organizationJsonLd(description: string) {
         url: site.url,
         description,
         email: site.contact.email,
+        telephone: `+${site.contact.whatsappNumber}`,
+        sameAs: [site.socials.facebook, site.socials.instagram],
         logo: `${site.url}/brand/ape-mark.svg`,
         image: `${site.url}/opengraph-image`,
         address: {

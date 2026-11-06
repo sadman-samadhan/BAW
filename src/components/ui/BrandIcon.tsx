@@ -1,6 +1,6 @@
-import { siMessenger, siWhatsapp } from "simple-icons";
+import { siFacebook, siInstagram, siMessenger, siWhatsapp } from "simple-icons";
 
-const icons = { whatsapp: siWhatsapp, messenger: siMessenger };
+const icons = { whatsapp: siWhatsapp, messenger: siMessenger, facebook: siFacebook, instagram: siInstagram };
 
 type Props = {
   name: keyof typeof icons;
@@ -8,7 +8,7 @@ type Props = {
   className?: string;
 };
 
-/** WhatsApp and Messenger glyphs from Simple Icons, inheriting the current text colour. */
+/** WhatsApp, Messenger, Facebook and Instagram glyphs from Simple Icons, inheriting the current text colour. */
 export function BrandIcon({ name, size = 20, className }: Props) {
   return (
     <svg
