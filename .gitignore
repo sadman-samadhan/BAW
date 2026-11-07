@@ -45,3 +45,6 @@ next-env.d.ts
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Social media content and tooling (kept local only)
+/social/
